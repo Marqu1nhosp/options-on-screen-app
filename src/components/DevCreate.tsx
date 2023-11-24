@@ -1,9 +1,8 @@
 export function DevCreate() {
   return (
-    <div className="absolute bottom-0 p-1.5">
-      <p className="text-black text-sm dark:text-white">
-        Desenvolvido por Marcos Porto
-      </p>
-    </div>
+    <footer className="text-center dark:text-white text-black">
+      <p className="text-sm">Desenvolvido por Marcos Porto</p>
+      <p className="text-xs">&copy; Marcos Porto</p>
+    </footer>
   )
 }

@@ -22,6 +22,8 @@ export function OptionsOnScreen() {
   const [movie, setMovie] = useState<MovieData | undefined>()
   const [desableClickFindMovie, setDesableClickFindMovie] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
+  const [animateFadeDown, setAnimateFadeDown] = useState('')
+  const [animateDuration, setAnimateDuration] = useState('')
 
   const { theme, setTheme } = useContext(ThemeDarkLightContext)
 
@@ -40,6 +42,13 @@ export function OptionsOnScreen() {
       const randomMovie = response.data.results[ramdomIndex]
       setDesableClickFindMovie(true)
       setMovie(randomMovie)
+      setAnimateFadeDown('animate-fade-down')
+      setAnimateDuration('animate-duration-[1300ms]')
+
+      setTimeout(() => {
+        setAnimateFadeDown('')
+        setAnimateDuration('')
+      }, 1000)
     }
     setCurrentPage(currentPage + 1)
   }
@@ -52,27 +61,29 @@ export function OptionsOnScreen() {
         ) : (
           <ButtonThemeLight onClick={async () => setTheme('light')} />
         )}
-        <div className="mb-16 flex flex-col gap-4">
+        <div className="mb-12 flex flex-col gap-4">
           <DontKnowWhatToWatch />
           {desableClickFindMovie ? (
-            <div className="flex flex-col gap-3 md:flex-row md:items-center ">
-              <div className="md:mt-3">
-                <img
-                  src={apiImg + movie?.poster_path}
-                  width={200}
-                  height={200}
-                  alt=""
-                  className="md:w-200 md:h-200 mx-auto self-center"
-                />
-              </div>
-              <div className="flex flex-col gap-3">
-                <div className="lg:flex lg:items-center lg:justify-center md:items-center">
-                  <h1 className="font-bold text-lg md:text-xl text-center md:text-left">
-                    {movie?.title}
-                  </h1>
+            <div className={`${animateFadeDown} ${animateDuration}`}>
+              <div className="flex flex-col gap-3 md:flex-row md:items-center ">
+                <div className="md:mt-3">
+                  <img
+                    src={apiImg + movie?.poster_path}
+                    width={200}
+                    height={200}
+                    alt=""
+                    className="md:w-200 md:h-200 mx-auto self-center"
+                  />
                 </div>
-                <div>
-                  <h1 className="text-left w-96">{movie?.overview}</h1>
+                <div className="flex flex-col gap-3">
+                  <div className="lg:flex lg:items-center lg:justify-center md:items-center">
+                    <h1 className="font-bold text-lg md:text-xl text-center md:text-left">
+                      {movie?.title}
+                    </h1>
+                  </div>
+                  <div>
+                    <h1 className="text-left w-96">{movie?.overview}</h1>
+                  </div>
                 </div>
               </div>
             </div>
