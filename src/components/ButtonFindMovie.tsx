@@ -1,3 +1,4 @@
+import React from 'react'
 interface ButtonFindMovieProps {
   name: string
   onClick: () => Promise<void>

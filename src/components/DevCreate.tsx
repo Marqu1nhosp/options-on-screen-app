@@ -1,3 +1,4 @@
+import React from 'react'
 export function DevCreate() {
   return (
     <footer className="text-center dark:text-white text-black">

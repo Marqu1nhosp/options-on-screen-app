@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
+import React, { useContext, useState } from 'react'
 import axios from 'axios'
-import { useContext, useState } from 'react'
+
 import { api, apiImg } from '@/services/api'
 import { ClickFindMovie } from '@/components/ClickFindMovie'
 import { DontKnowWhatToWatch } from '@/components/DontKnowWhatToWatch'
@@ -97,3 +98,5 @@ export function OptionsOnScreen() {
     </>
   )
 }
+
+export default OptionsOnScreen

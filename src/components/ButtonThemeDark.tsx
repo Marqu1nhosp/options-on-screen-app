@@ -1,3 +1,4 @@
+import React from 'react'
 import { Moon } from 'phosphor-react'
 
 interface ButtonThemeLightProps {

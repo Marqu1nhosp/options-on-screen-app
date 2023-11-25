@@ -1,3 +1,4 @@
+import React from 'react'
 import { SunDim } from 'phosphor-react'
 
 interface ButtonThemeLightProps {
