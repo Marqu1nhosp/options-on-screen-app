@@ -665,18 +665,6 @@ Contribuições são bem-vindas! Para contribuir:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para detalhes.
-
-## Suporte
-
-Para dúvidas, sugestões ou reportar bugs:
-
-- Abra uma issue no GitHub
-- Envie um email para o desenvolvedor
-- Consulte a documentação do Next.js: https://nextjs.org/docs
-
 ## Gloasário de Termos
 
 | Termo            | Explicação                                                        |
